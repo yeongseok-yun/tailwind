@@ -4,12 +4,12 @@
       <div class="flex flex-col bg-white p-5 flex-wrap gap-10">
         <div class="flex gap-10 flex-col md:flex-row m-auto md:m-0">
           <img
-            src="https://avatars.githubusercontent.com/u/117346967?v=4"
+            src="@/assets/backgimg.jpg"
             alt="프로필"
             class="w-48 aspect-square"
           />
           <div>
-            <h1 class="text-4xl text-[#EFA43D] md:mt-10">윤영석</h1>
+            <h1 class="text-4xl text-[GRAY] md:mt-10">윤영석</h1>
             <p class="text-gray-500 mt-2">개발자</p>
           </div>
         </div>
