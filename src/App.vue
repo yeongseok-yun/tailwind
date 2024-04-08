@@ -154,7 +154,17 @@
                   >
                   <p>
                     일본 도쿄에 위치한 SI프로젝트 수행 및 협력을 담당한 회사로
-                    웹개발의 설계,구현을 주로 담당.
+                    웹개발의 설계,구현을 주로 담당
+                  </p>
+                </div>
+                
+                <div class="pl-4">
+                  <div class="text-xl inline-block">Smart Life 합동회사</div>
+                  <span class="text-sm text-gray-500 ml-2"
+                    >2018.01 ~ 2018.06</span
+                  >
+                  <p>
+                    안드로이드, ios 게임 어플리케이션의 화면 수정, 테스트, 번역등의 업무를 담당
                   </p>
                 </div>
               </div>
@@ -369,7 +379,7 @@ export default {
   const currentDate = new Date();
 
   // 시작일을 2018년 8월 1일로 변경
-  const fromDate = new Date(2018, 7, 1); // 8월은 7로 표시
+  const fromDate = new Date(2018, 1, 1); // 8월은 7로 표시
 
   // 현재 날짜를 기준으로 년, 월 수 계산
   let years = currentDate.getFullYear() - fromDate.getFullYear();
