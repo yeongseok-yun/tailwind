@@ -54,7 +54,7 @@
                   </li>
                   <li>
                     <i class="fas fa-envelope text-gray-400 mr-1"></i>MBTI가
-                    ESTJ이다.
+                    ENTJ이다.
                   </li>
                 </ul>
               </div>
@@ -79,7 +79,7 @@
                   </li>
                   <li>
                     <i class="fas fa-envelope text-gray-400 mr-1"></i
-                    >술을좋아한다.
+                    >밤에 먹는 술보다 낮에 먹는 술을 좋아한다.
                   </li>
                 </ul>
               </div>
@@ -112,7 +112,7 @@
                   >
                   <p>
                     서울 강남구 위치한 인공지능, 빅데이터 전문 회사로 자사
-                    거대언어모델의 커스터마이징, 고객사 수행 업무를 담당
+                    LLM을 활용한 LLM 도입 프로젝트에 대한 고객사 수행 업무를 담당
                   </p>
                 </div>
                 <div class="pl-4">
@@ -184,7 +184,34 @@
                 >
                   프로젝트 경력
                 </h2>
-
+                <div class="pl-4">
+                  <div class="text-xl inline-block">
+                    한국수력원자력 형상관리 도입 PoC
+                  </div>
+                  <span class="text-sm text-gray-500 ml-2"
+                    >2023.11 ~ 2024.04 / 서울 / PL</span
+                  >
+                  <p>
+                    &nbsp;&nbsp;&nbsp;스킬 : JAVA, SPRINGBOOT, PYTHON, LLAMA2, VUE 
+                  </p>
+                  <p>
+                    &nbsp;&nbsp;&nbsp;내용 : 한국수력원자력 문서에 대한 맞춤형 형상관리 4개 과제에 대한 수행
+                  </p>
+                </div>
+                <div class="pl-4">
+                  <div class="text-xl inline-block">
+                    행정안전부 LLM도입 PoC
+                  </div>
+                  <span class="text-sm text-gray-500 ml-2"
+                    >2023.08 ~ 2023.10 / 서울 / 멤버</span
+                  >
+                  <p>
+                    &nbsp;&nbsp;&nbsp;스킬 : PYTHON, VUE, LINUX
+                  </p>
+                  <p>
+                    &nbsp;&nbsp;&nbsp;내용 : 자사 LLM 모델을 활용하여 문서업로드, 문서 Q&A 기능 구현
+                  </p>
+                </div>
                 <div class="pl-4">
                   <div class="text-xl inline-block">
                     신세계아이앤씨 PMS 구축
@@ -266,7 +293,7 @@
                   >
                   <p>
                     &nbsp;&nbsp;&nbsp;스킬 : python, Flask, mariaDB, aws, vuejs,
-                    Ble, Lora, numpy
+                    Ble, numpy, 단순 선형회귀 모델, svm모델
                   </p>
                   <p>
                     &nbsp;&nbsp;&nbsp;내용 : Iot플랫폼 클라우딩 서비스(Ai
@@ -316,7 +343,7 @@
                   <li>LINUX</li>
                   <li>AWS S3</li>
                   <li>BLE</li>
-                  <li>LORA</li>
+                  <li>AWS EC2</li>
                   <li>SQL</li>
                 </ul>
               </div>
@@ -335,67 +362,65 @@ export default {
     GChart,
   },
   setup() {
-    let yy = 0;
-    let mm = 0;
-    const calDate = function () {
-      const fromDate = new Date(2018, 8 - 1); // 월은 0부터 시작하므로 -1
-      const toDate = new Date(
-        new Date().getFullYear(),
-        new Date().getMonth() + 2
-      ); // 월은 0부터 시작하므로 -1
+  let yy = 0;
+  let mm = 0;
 
-      // 년 수 계산
-      let years = toDate.getFullYear() - fromDate.getFullYear();
+  // 현재 날짜를 가져오는 함수
+  const currentDate = new Date();
 
-      // 월 수 계산
-      let months = toDate.getMonth() - fromDate.getMonth();
-      if (months < 0) {
-        years--; // 월 수가 음수이면 1년을 빼야 함
-        months += 12;
-      }
-      yy = years;
-      mm = months;
-      //return { years, months };
-    };
-    const openNewTab = function (url) {
-      window.open(url, "_blank");
-    };
+  // 시작일을 2018년 8월 1일로 변경
+  const fromDate = new Date(2018, 7, 1); // 8월은 7로 표시
 
-    calDate();
+  // 현재 날짜를 기준으로 년, 월 수 계산
+  let years = currentDate.getFullYear() - fromDate.getFullYear();
+  let months = currentDate.getMonth() - fromDate.getMonth();
+  
+  // 월이 음수일 경우 연도를 조정
+  if (months < 0) {
+    years--;
+    months += 12;
+  }
+  
+  // 계산된 년, 월 수를 변수에 할당
+  yy = years;
+  mm = months;
 
-    return {
-      yy,
-      mm,
-      openNewTab,
-      GChart,
-      timelineData: [
-        ["name", "start", "end"],
-        ["군복무", new Date(2008, 11, 10), new Date(2016, 2, 26)],
-        ["재취직준비", new Date(2016, 3, 1), new Date(2017, 11, 30)],
-        [
-          "일본에서 개발자로 생활",
-          new Date(2017, 12, 1),
-          new Date(2022, 4, 15),
-        ],
-        [
-          "한국에서 개발자로 생활",
-          new Date(2022, 5, 1),
-          new Date(2023, 10, 11),
-        ],
+  const openNewTab = function (url) {
+    window.open(url, "_blank");
+  };
+
+  return {
+    yy,
+    mm,
+    openNewTab,
+    GChart,
+    timelineData: [
+      ["name", "start", "end"],
+      ["군복무", new Date(2008, 11, 10), new Date(2016, 2, 26)],
+      ["재취직준비", new Date(2016, 3, 1), new Date(2017, 11, 30)],
+      [
+        "일본에서 개발자로 생활",
+        new Date(2017, 12, 1),
+        new Date(2022, 4, 15),
       ],
-      timelineOptions: {
-        timeline: {
-          rowLabelStyle: "none",
-          barLabelStyle: "none",
-          start: new Date(2005, 0, 1),
-          end: new Date(2030, 11, 31),
-        },
-
-        colors: ["#E74C3C", "#2C3E50", "#2980B9"],
-        tooltip: { textStyle: { fontName: "Ariel", fontSize: 14 } },
+      [
+        "한국에서 개발자로 생활",
+        new Date(2022, 5, 1),
+        currentDate, // 현재 날짜로 변경
+      ],
+    ],
+    timelineOptions: {
+      timeline: {
+        rowLabelStyle: "none",
+        barLabelStyle: "none",
+        start: new Date(2005, 0, 1),
+        end: new Date(2030, 11, 31),
       },
-    };
-  },
+      colors: ["#E74C3C", "#2C3E50", "#2980B9"],
+      tooltip: { textStyle: { fontName: "Ariel", fontSize: 14 } },
+    },
+  };
+}
 };
 </script>
 <style>
